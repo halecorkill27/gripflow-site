@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GripFlow — Premium Pilates Grip Socks</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --coral:#E8907A;--coral-l:#F5C4B3;--coral-p:#FAECE7;
+  --ink:#1A1714;--ink-2:#3A3530;--ink-3:#7A7470;
+  --cream:#FAF6F0;--white:#FFFFFF;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --rule:0.5px solid rgba(26,23,20,0.13);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);overflow-x:hidden}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+  padding:0 2.5rem;height:52px;
+  background:rgba(250,246,240,0.95);
+  backdrop-filter:blur(12px);
+  border-bottom:var(--rule);
+}
+.nav-left{display:flex;gap:2.5rem}
+.nav-logo{font-family:var(--serif);font-size:1.2rem;font-weight:500;letter-spacing:.04em;color:var(--ink);text-decoration:none}
+.nav-right{display:flex;gap:2.5rem;justify-content:flex-end;align-items:center}
+nav a{font-size:.72rem;font-weight:400;color:var(--ink-3);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;transition:color .15s}
+nav a:hover{color:var(--coral)}
+.nav-cta{background:var(--ink)!important;color:var(--white)!important;padding:.4rem 1.1rem;font-size:.7rem!important;letter-spacing:.08em!important;transition:background .15s!important}
+.nav-cta:hover{background:var(--coral)!important}
+
+/* HERO */
+.hero{
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:100vh;padding-top:52px;
+  border-bottom:var(--rule);
+}
+.hero-l{
+  border-right:var(--rule);
+  display:flex;flex-direction:column;
+}
+.hero-kicker{
+  padding:.75rem 2rem;border-bottom:var(--rule);
+  font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);
+  display:flex;align-items:center;gap:.75rem;
+}
+.hero-kicker span{display:inline-block;width:1.5rem;height:1px;background:var(--coral);flex-shrink:0}
+.hero-headline-block{
+  flex:1;display:flex;align-items:flex-end;
+  padding:2.5rem 2rem 2rem;
+}
+.hero-headline{
+  font-family:var(--serif);font-size:clamp(4.5rem,7.5vw,8.5rem);
+  font-weight:300;line-height:.92;letter-spacing:-.02em;
+}
+.hero-headline em{font-style:italic;color:var(--coral)}
+.hero-actions-block{
+  border-top:var(--rule);
+  display:grid;grid-template-columns:1fr 1fr;
+}
+.hero-desc-col{padding:1.75rem 2rem;border-right:var(--rule)}
+.hero-desc{font-size:.88rem;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:1.25rem}
+.btn-ink{
+  display:inline-block;background:var(--ink);color:var(--white);
+  padding:.65rem 1.5rem;font-size:.72rem;font-weight:500;
+  letter-spacing:.08em;text-transform:uppercase;text-decoration:none;
+  transition:background .15s;
+}
+.btn-ink:hover{background:var(--coral)}
+.promo{
+  display:flex;align-items:center;gap:.4rem;margin-top:.75rem;
+  font-size:.7rem;color:var(--coral);
+}
+.promo-dot{width:4px;height:4px;border-radius:50%;background:var(--coral)}
+.hero-price-col{
+  padding:1.75rem 2rem;
+  display:flex;flex-direction:column;justify-content:center;gap:.5rem;
+}
+.price-big{font-family:var(--serif);font-size:3.5rem;font-weight:300;line-height:1}
+.price-note{font-size:.72rem;color:var(--ink-3);letter-spacing:.03em}
+.price-sale{color:var(--coral);font-size:.8rem;font-weight:500}
+
+/* HERO RIGHT */
+.hero-r{
+  background:var(--coral-p);
+  display:grid;grid-template-rows:auto 1fr auto;
+}
+.hero-r-top{
+  padding:.75rem 2rem;border-bottom:var(--rule);
+  font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+  display:flex;justify-content:space-between;
+}
+.hero-visual-area{
+  display:flex;align-items:center;justify-content:center;
+  padding:3rem 2rem;position:relative;
+}
+.floating-stat{
+  position:absolute;background:var(--white);
+  padding:.6rem .875rem;font-size:.7rem;color:var(--ink);
+  border:var(--rule);
+  animation:floatA 3s ease-in-out infinite;
+}
+.fs-1{top:2rem;right:2rem}
+.fs-2{bottom:3rem;left:2rem;animation-delay:1.5s}
+.fs-label{font-weight:500;display:block;font-size:.74rem}
+.fs-sub{color:var(--ink-3);font-size:.66rem}
+@keyframes floatA{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.hero-r-bottom{
+  padding:.875rem 2rem;border-top:var(--rule);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.colorway-dots{display:flex;gap:.5rem;align-items:center}
+.colorway-dot{width:22px;height:22px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:border-color .15s}
+.colorway-dot.active{border-color:var(--ink)}
+.colorway-label{font-size:.68rem;color:var(--ink-3);letter-spacing:.05em;text-transform:uppercase}
+
+/* TICKER */
+.ticker{
+  height:36px;background:var(--ink);overflow:hidden;
+  display:flex;align-items:center;
+}
+.ticker-inner{display:flex;animation:tick 20s linear infinite;white-space:nowrap}
+.ticker-item{padding:0 2rem;font-size:.67rem;letter-spacing:.11em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.ticker-item.accent{color:var(--coral)}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+.section{padding:5rem 2.5rem;border-bottom:var(--rule)}
+.section-eyebrow{
+  font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--coral);
+  display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;
+}
+.section-eyebrow::before{content:'';width:1.5rem;height:1px;background:var(--coral)}
+.section-title{font-family:var(--serif);font-size:clamp(2.25rem,4vw,3.75rem);font-weight:300;line-height:1.1;margin-bottom:3.5rem;max-width:560px}
+.section-title em{font-style:italic;color:var(--coral)}
+
+/* DIFFERENTIATORS */
+.diff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:var(--rule)}
+.diff-item{
+  padding:2rem;border-right:var(--rule);
+  transition:background .15s;
+}
+.diff-item:last-child{border-right:none}
+.diff-item:hover{background:var(--white)}
+.diff-n{font-family:var(--serif);font-size:2.75rem;font-weight:300;color:var(--coral-l);line-height:1;margin-bottom:.875rem}
+.diff-name{font-size:.9rem;font-weight:500;color:var(--ink);margin-bottom:.5rem}
+.diff-desc{font-size:.8rem;line-height:1.7;color:var(--ink-3);font-weight:300}
+
+/* APP SECTION */
+.app-section{
+  padding:5rem 2.5rem;background:var(--ink);border-bottom:var(--rule);
+  display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:start;
+}
+.app-eyebrow{font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--coral);display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.app-eyebrow::before{content:'';width:1.5rem;height:1px;background:var(--coral)}
+.app-title{font-family:var(--serif);font-size:clamp(2.25rem,4vw,3.5rem);font-weight:300;line-height:1.1;color:var(--white);margin-bottom:1.25rem}
+.app-title em{font-style:italic;color:var(--coral)}
+.app-desc{font-size:.88rem;line-height:1.75;color:rgba(255,255,255,.5);font-weight:300;margin-bottom:2rem}
+.app-features{display:flex;flex-direction:column;gap:.875rem;margin-bottom:2.5rem}
+.app-feat{display:flex;align-items:flex-start;gap:.75rem;font-size:.82rem;color:rgba(255,255,255,.6);line-height:1.6}
+.app-feat::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--coral);flex-shrink:0;margin-top:.45rem}
+.app-feat strong{color:var(--white);font-weight:500}
+
+.app-right{display:flex;flex-direction:column;gap:2rem}
+.plans-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.07)}
+.plan-card{background:var(--ink);padding:1.5rem}
+.plan-label{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.4rem}
+.plan-price{font-family:var(--serif);font-size:2.25rem;font-weight:300;color:var(--white);line-height:1;margin-bottom:.5rem}
+.plan-price sub{font-family:var(--sans);font-size:.75rem;color:rgba(255,255,255,.3)}
+.plan-badge{display:inline-block;background:var(--coral);color:var(--white);font-size:.62rem;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .55rem;margin-bottom:.75rem}
+.plan-list{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.plan-list li{font-size:.76rem;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:.5rem}
+.plan-list li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--coral);flex-shrink:0}
+
+.phone-mini{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);
+  border-radius:28px;padding:1rem;overflow:hidden;
+}
+.pm-notch{width:56px;height:4px;background:rgba(255,255,255,.1);border-radius:2px;margin:0 auto 1.25rem}
+.pm-greeting{font-family:var(--serif);font-size:1.1rem;color:var(--white);font-weight:300;margin-bottom:.75rem}
+.pm-greeting em{color:var(--coral);font-style:italic}
+.pm-streak{background:rgba(232,144,122,.1);border:1px solid rgba(232,144,122,.2);border-radius:10px;padding:.75rem 1rem;margin-bottom:.625rem;display:flex;justify-content:space-between;align-items:center}
+.pm-s-label{font-size:.58rem;color:rgba(255,255,255,.35);letter-spacing:.08em;text-transform:uppercase}
+.pm-s-num{font-family:var(--serif);font-size:1.6rem;color:var(--coral)}
+.pm-class{background:rgba(255,255,255,.04);border-radius:8px;padding:.6rem .75rem;margin-bottom:.375rem}
+.pm-class-title{font-size:.76rem;color:rgba(255,255,255,.8);font-weight:500}
+.pm-class-meta{font-size:.65rem;color:rgba(255,255,255,.3);margin-top:.15rem}
+.pm-prog{background:rgba(255,255,255,.04);border-radius:8px;padding:.75rem;margin-top:.25rem}
+.pm-prog-label{font-size:.58rem;color:rgba(255,255,255,.3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+.pm-bar-bg{background:rgba(255,255,255,.07);height:4px;border-radius:2px}
+.pm-bar-fill{height:100%;width:68%;background:var(--coral);border-radius:2px}
+.pm-prog-text{font-size:.62rem;color:rgba(255,255,255,.25);margin-top:.35rem}
+
+/* PRODUCT SECTION */
+.product-section{padding:5rem 2.5rem;border-bottom:var(--rule)}
+.product-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.product-img{
+  aspect-ratio:3/4;background:var(--coral-p);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.product-img-text{font-family:var(--serif);font-size:.95rem;font-style:italic;color:var(--coral);opacity:.55}
+.product-sock-bg{position:absolute;bottom:-30px;right:-30px;opacity:.12}
+.product-name{font-family:var(--serif);font-size:2.25rem;font-weight:300;line-height:1.1;margin-bottom:.5rem}
+.product-price-row{display:flex;align-items:baseline;gap:.625rem;margin-bottom:.5rem}
+.product-price-sale{font-size:1.2rem;color:var(--coral);font-weight:500}
+.product-price-orig{font-size:.9rem;color:var(--ink-3);text-decoration:line-through}
+.stars{color:var(--coral);font-size:.8rem;letter-spacing:2px}
+.rating-note{font-size:.68rem;color:var(--ink-3);margin-top:.15rem;margin-bottom:1.75rem}
+.sz-label{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.6rem}
+.sz-grid{display:flex;gap:.375rem;flex-wrap:wrap;margin-bottom:1.75rem}
+.sz-btn{
+  width:44px;height:36px;border:var(--rule);background:none;
+  font-family:var(--sans);font-size:.76rem;color:var(--ink);cursor:pointer;
+  transition:all .12s;
+}
+.sz-btn:hover,.sz-btn.active{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.sw-row{display:flex;gap:.5rem;margin-top:.375rem;margin-bottom:1.75rem}
+.swatch{width:26px;height:26px;border-radius:50%;cursor:pointer;position:relative}
+.swatch.active::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:1.5px solid var(--ink)}
+.btn-full{
+  display:block;text-align:center;padding:.8rem 1rem;
+  font-family:var(--sans);font-size:.74rem;font-weight:500;
+  letter-spacing:.08em;text-transform:uppercase;text-decoration:none;
+  cursor:pointer;border:none;transition:all .15s;margin-bottom:.5rem;
+}
+.btn-dark{background:var(--ink);color:var(--white)}
+.btn-dark:hover{background:var(--coral)}
+.btn-outline{background:none;color:var(--ink);border:var(--rule);margin-bottom:.5rem}
+.btn-outline:hover{border-color:var(--ink)}
+.promo-note{font-size:.7rem;color:var(--coral);text-align:center;padding:.5rem;background:var(--coral-p)}
+
+/* COMMUNITY */
+.community-section{padding:5rem 2.5rem;border-bottom:var(--rule)}
+.community-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.community-card{
+  border:var(--rule);padding:2rem;
+  transition:background .15s;
+}
+.community-card:hover{background:var(--white)}
+.community-card.featured{background:var(--coral-p);border-color:var(--coral-l)}
+.cc-icon{font-size:1.4rem;margin-bottom:.875rem}
+.cc-title{font-size:.92rem;font-weight:500;color:var(--ink);margin-bottom:.5rem}
+.cc-desc{font-size:.8rem;line-height:1.7;color:var(--ink-3);font-weight:300}
+
+/* FOOTER */
+footer{
+  display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;
+  padding:3rem 2.5rem;border-top:var(--rule);gap:3rem;
+}
+.footer-logo{font-family:var(--serif);font-size:1.3rem;font-weight:500;color:var(--ink);display:block;margin-bottom:.5rem;text-decoration:none}
+.footer-tagline{font-size:.76rem;line-height:1.6;color:var(--ink-3);font-weight:300;margin-bottom:.75rem}
+.footer-copy{font-size:.68rem;color:var(--ink-3)}
+.footer-col-title{font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.875rem}
+.footer-links{display:flex;flex-direction:column;gap:.5rem}
+.footer-links a{font-size:.78rem;color:var(--ink-2);text-decoration:none;transition:color .12s}
+.footer-links a:hover{color:var(--coral)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:860px){
+  nav{grid-template-columns:1fr auto;padding:0 1.25rem}
+  .nav-left,.nav-right{display:none}
+  .hero{grid-template-columns:1fr}
+  .hero-r{display:none}
+  .hero-headline-block{padding:2rem 1.25rem 1.5rem}
+  .hero-actions-block{grid-template-columns:1fr}
+  .hero-desc-col{border-right:none;border-bottom:var(--rule);padding:1.5rem 1.25rem}
+  .hero-price-col{padding:1.5rem 1.25rem}
+  .section,.product-section,.community-section{padding:3.5rem 1.25rem}
+  .diff-grid{grid-template-columns:1fr 1fr}
+  .diff-item:nth-child(even){border-right:none}
+  .diff-item:nth-child(1),.diff-item:nth-child(2){border-bottom:var(--rule)}
+  .app-section{grid-template-columns:1fr;padding:3.5rem 1.25rem;gap:3rem}
+  .product-grid{grid-template-columns:1fr;gap:3rem}
+  .community-grid{grid-template-columns:1fr;gap:1rem}
+  footer{grid-template-columns:1fr 1fr;padding:2.5rem 1.25rem;gap:2rem}
+  .footer-links a{font-size:.8rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <a href="#">Socks</a>
+    <a href="#app">App</a>
+    <a href="#community">Community</a>
+  </div>
+  <a href="#" class="nav-logo">GripFlow</a>
+  <div class="nav-right">
+    <a href="#">Studio Blog</a>
+    <a href="https://whop.com/checkout/plan_uDuvuLbss6htj?d=LAUNCH" class="nav-cta">Order Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-l">
+    <div class="hero-kicker"><span></span>Premium pilates grip socks — Built for the studio</div>
+    <div class="hero-headline-block reveal">
+      <h1 class="hero-headline">Grip<br>that <em>moves</em><br>with you.</h1>
+    </div>
+    <div class="hero-actions-block">
+      <div class="hero-desc-col">
+        <p class="hero-desc">Engineered around how your foot actually moves on the reformer — not how a factory thinks it does. Targeted grip zones. Zero bulk. All session comfort.</p>
+        <a href="https://whop.com/checkout/plan_uDuvuLbss6htj?d=LAUNCH" class="btn-ink">Shop Now — $22</a>
+        <div class="promo"><span class="promo-dot"></span>Use code LAUNCH · 20% off · $17.60</div>
+      </div>
+      <div class="hero-price-col">
+        <div class="price-big">$22</div>
+        <div class="price-note">Per pair · Free shipping over $40</div>
+        <div class="price-sale" style="margin-top:.375rem">LAUNCH → $17.60</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-r">
+    <div class="hero-r-top">
+      <span>2026 Collection</span>
+      <span>Coral Blush · Cream · Charcoal</span>
+    </div>
+    <div class="hero-visual-area">
+      <div style="position:relative">
+        <svg width="230" height="310" viewBox="0 0 220 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 30 Q48 12 72 8 Q108 2 136 14 Q158 24 154 48 L148 188 Q151 234 172 254 Q196 276 182 292 Q168 302 144 296 Q106 289 82 264 Q58 238 50 204 Z" fill="#E8907A"/>
+          <path d="M50 30 Q48 12 72 8 Q108 2 136 14 Q158 24 154 48 L152 88 Q124 76 86 78 Q64 79 50 86 Z" fill="rgba(255,255,255,.22)"/>
+          <path d="M148 188 Q151 234 172 254 Q196 276 182 292 Q168 302 144 296 Q106 289 82 264 Q58 238 50 204 L50 176 Q68 196 106 202 Q136 208 148 188 Z" fill="#C87060"/>
+          <circle cx="78" cy="224" r="5" fill="#1A1714" opacity=".4"/>
+          <circle cx="95" cy="238" r="5" fill="#1A1714" opacity=".4"/>
+          <circle cx="113" cy="246" r="5" fill="#1A1714" opacity=".4"/>
+          <circle cx="130" cy="244" r="5" fill="#1A1714" opacity=".4"/>
+          <circle cx="145" cy="234" r="5" fill="#1A1714" opacity=".4"/>
+          <circle cx="68" cy="118" r="4" fill="#1A1714" opacity=".3"/>
+          <circle cx="83" cy="126" r="4" fill="#1A1714" opacity=".3"/>
+          <circle cx="98" cy="121" r="4" fill="#1A1714" opacity=".3"/>
+          <circle cx="68" cy="138" r="4" fill="#1A1714" opacity=".3"/>
+          <circle cx="83" cy="145" r="4" fill="#1A1714" opacity=".3"/>
+          <circle cx="98" cy="140" r="4" fill="#1A1714" opacity=".3"/>
+        </svg>
+        <div class="floating-stat fs-1">
+          <span class="fs-label">Engineered grip</span>
+          <span class="fs-sub">Ball + heel zones</span>
+        </div>
+        <div class="floating-stat fs-2">
+          <span class="fs-label">Slim-fit fabric</span>
+          <span class="fs-sub">Zero reformer bulk</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-r-bottom">
+      <div class="colorway-dots">
+        <div class="colorway-dot active" style="background:#E8907A"></div>
+        <div class="colorway-dot" style="background:#D4C4B8"></div>
+        <div class="colorway-dot" style="background:#2C2926"></div>
+      </div>
+      <span class="colorway-label">3 colorways</span>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner" aria-hidden="true">
+    <span class="ticker-item">Studio-engineered grip</span><span class="ticker-item accent">● GripFlow</span>
+    <span class="ticker-item">Breathable slim fabric</span><span class="ticker-item accent">● Built for reformer</span>
+    <span class="ticker-item">Low-profile toe seam</span><span class="ticker-item accent">● Free community</span>
+    <span class="ticker-item">Targeted grip zones</span><span class="ticker-item accent">● $22 / pair</span>
+    <span class="ticker-item">Ships in 2–3 days</span><span class="ticker-item accent">● Code LAUNCH · 20% off</span>
+    <span class="ticker-item">Studio-engineered grip</span><span class="ticker-item accent">● GripFlow</span>
+    <span class="ticker-item">Breathable slim fabric</span><span class="ticker-item accent">● Built for reformer</span>
+    <span class="ticker-item">Low-profile toe seam</span><span class="ticker-item accent">● Free community</span>
+    <span class="ticker-item">Targeted grip zones</span><span class="ticker-item accent">● $22 / pair</span>
+    <span class="ticker-item">Ships in 2–3 days</span><span class="ticker-item accent">● Code LAUNCH · 20% off</span>
+  </div>
+</div>
+
+<!-- DIFFERENTIATORS -->
+<section class="section reveal">
+  <div class="section-eyebrow">Why GripFlow</div>
+  <h2 class="section-title">Not all grip socks are <em>created equal.</em></h2>
+  <div class="diff-grid">
+    <div class="diff-item">
+      <div class="diff-n">01</div>
+      <div class="diff-name">Targeted grip zones</div>
+      <div class="diff-desc">Grip dots placed precisely at the ball and heel — where your foot actually generates force on the reformer. Not a random grid pattern.</div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-n">02</div>
+      <div class="diff-name">Breathable slim-fit fabric</div>
+      <div class="diff-desc">Thin enough to feel the reformer carriage. Structured enough to support your arch through a full session.</div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-n">03</div>
+      <div class="diff-name">Low-profile toe seam</div>
+      <div class="diff-desc">Standard seams bunch during relevés. GripFlow's flat toe seam disappears completely into your practice.</div>
+    </div>
+    <div class="diff-item" style="border-right:none">
+      <div class="diff-n">04</div>
+      <div class="diff-name">Designed for pilates</div>
+      <div class="diff-desc">Not cross-training. Not yoga. Every decision — fabric weight, grip placement — was made for studio pilates.</div>
+    </div>
+  </div>
+</section>
+
+<!-- APP SECTION -->
+<section class="app-section reveal" id="app">
+  <div>
+    <div class="app-eyebrow">GripFlow App</div>
+    <h2 class="app-title">Track your practice.<br><em>Level up your studio game.</em></h2>
+    <p class="app-desc">Log every class, track your reformer skill progression, and access a full guided session library. Free to start — unlock everything with Pro.</p>
+    <div class="app-features">
+      <div class="app-feat"><strong>Class tracker</strong> — Log attendance, duration, and notes for every session</div>
+      <div class="app-feat"><strong>Guided sessions</strong> — Beginner through advanced, reformer-specific programs</div>
+      <div class="app-feat"><strong>Skill progression</strong> — Track which reformer exercises you've mastered</div>
+      <div class="app-feat"><strong>Community access</strong> — Connect with the GripFlow studio community on Whop</div>
+    </div>
+  </div>
+  <div class="app-right">
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-label">Free</div>
+        <div class="plan-price">$0 <sub>/ forever</sub></div>
+        <ul class="plan-list">
+          <li>Class attendance log</li>
+          <li>Session timer</li>
+          <li>3 guided sessions</li>
+        </ul>
+      </div>
+      <div class="plan-card">
+        <div class="plan-label">Pro</div>
+        <div class="plan-price">$9.99 <sub>/ mo</sub></div>
+        <div class="plan-badge">Most popular</div>
+        <ul class="plan-list">
+          <li>Everything in Free</li>
+          <li>Unlimited sessions</li>
+          <li>Reformer skill tracker</li>
+          <li>Streaks + milestones</li>
+          <li>Community access</li>
+          <li>New colorway drops</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phone-mini">
+      <div class="pm-notch"></div>
+      <div class="pm-greeting">Good morning, <em>Hale</em></div>
+      <div class="pm-streak">
+        <div>
+          <div class="pm-s-label">Current streak</div>
+          <div class="pm-s-num">14</div>
+        </div>
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="17" stroke="rgba(232,144,122,.2)" stroke-width="3.5"/><circle cx="22" cy="22" r="17" stroke="#E8907A" stroke-width="3.5" stroke-dasharray="75 107" stroke-linecap="round" transform="rotate(-90 22 22)"/></svg>
+      </div>
+      <div class="pm-class">
+        <div class="pm-class-title">Reformer Fundamentals</div>
+        <div class="pm-class-meta">Today · 55 min</div>
+      </div>
+      <div class="pm-class">
+        <div class="pm-class-title">Tower &amp; Cadillac</div>
+        <div class="pm-class-meta">Wed · 50 min</div>
+      </div>
+      <div class="pm-prog">
+        <div class="pm-prog-label">Reformer skills mastered</div>
+        <div class="pm-bar-bg"><div class="pm-bar-fill"></div></div>
+        <div class="pm-prog-text">17 of 25 exercises</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT -->
+<section class="product-section reveal">
+  <div class="product-grid">
+    <div class="product-img">
+      <div class="product-img-text">Product photography coming soon</div>
+      <svg class="product-sock-bg" width="280" height="360" viewBox="0 0 220 300" fill="none">
+        <path d="M50 30 Q48 12 72 8 Q108 2 136 14 Q158 24 154 48 L148 188 Q151 234 172 254 Q196 276 182 292 Q168 302 144 296 Q106 289 82 264 Q58 238 50 204 Z" fill="#E8907A"/>
+      </svg>
+    </div>
+    <div>
+      <h3 class="product-name">GripFlow Pilates Socks</h3>
+      <div class="product-price-row">
+        <span class="product-price-sale">$17.60</span>
+        <span class="product-price-orig">$22.00</span>
+      </div>
+      <div class="stars">★★★★★</div>
+      <div class="rating-note">Launching now — be the first</div>
+      <div class="sz-label">Size</div>
+      <div class="sz-grid">
+        <button class="sz-btn">XS</button>
+        <button class="sz-btn">S</button>
+        <button class="sz-btn active">M</button>
+        <button class="sz-btn">L</button>
+        <button class="sz-btn">XL</button>
+      </div>
+      <div class="sz-label">Color — Coral Blush</div>
+      <div class="sw-row">
+        <div class="swatch active" style="background:#E8907A"></div>
+        <div class="swatch" style="background:#D4C4B8"></div>
+        <div class="swatch" style="background:#2C2926"></div>
+      </div>
+      <a href="https://whop.com/checkout/plan_uDuvuLbss6htj?d=LAUNCH" class="btn-full btn-dark">Order Now — $17.60</a>
+      <a href="https://whop.com/gripflow-31f8/" class="btn-full btn-outline">View on Whop</a>
+      <div class="promo-note">Code LAUNCH applied · 20% off for new customers</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="community-section reveal" id="community">
+  <div class="section-eyebrow">The ecosystem</div>
+  <h2 class="section-title">Socks. App. <em>Community.</em></h2>
+  <div class="community-grid">
+    <div class="community-card featured">
+      <div class="cc-icon">🧦</div>
+      <div class="cc-title">GripFlow Socks — $22/pair</div>
+      <div class="cc-desc">Studio-engineered grip socks for pilates practitioners who refuse to compromise. Targeted grip zones, flat toe seam, breathable slim fabric. Ships 2–3 days.</div>
+    </div>
+    <div class="community-card">
+      <div class="cc-icon">📱</div>
+      <div class="cc-title">GripFlow App — Free / $9.99 Pro</div>
+      <div class="cc-desc">Class attendance tracker, guided session library, reformer skill progression. Built for the serious practitioner who wants to see their progress.</div>
+    </div>
+    <div class="community-card">
+      <div class="cc-icon">💬</div>
+      <div class="cc-title">GripFlow Community — Whop</div>
+      <div class="cc-desc">Sizing help, pilates talk, new colorway drops, and a studio community of women who take their practice seriously. Included with Pro.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="reveal">
+  <div>
+    <a href="#" class="footer-logo">GripFlow</a>
+    <p class="footer-tagline">Premium pilates grip socks designed for stability, comfort, and style. Built for the studio.</p>
+    <p class="footer-copy">© 2026 GripFlow</p>
+  </div>
+  <div>
+    <div class="footer-col-title">Shop</div>
+    <div class="footer-links">
+      <a href="https://whop.com/checkout/plan_uDuvuLbss6htj?d=LAUNCH">Order Now (LAUNCH 20% off)</a>
+      <a href="https://whop.com/gripflow-31f8/">View on Whop</a>
+      <a href="#">Size Guide</a>
+      <a href="#">Shipping Info</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-col-title">Ecosystem</div>
+    <div class="footer-links">
+      <a href="#">GripFlow App</a>
+      <a href="https://whop.com/gripflow-31f8/">Community</a>
+      <a href="#">Updates & Drops</a>
+      <a href="#">Affiliate Program</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-col-title">Brand</div>
+    <div class="footer-links">
+      <a href="#">Studio Blog</a>
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.sz-btn').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.sz-btn').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+  });
+});
+document.querySelectorAll('.swatch').forEach(s => {
+  s.addEventListener('click', () => {
+    document.querySelectorAll('.swatch').forEach(x => x.classList.remove('active'));
+    s.classList.add('active');
+  });
+});
+document.querySelectorAll('.colorway-dot').forEach(d => {
+  d.addEventListener('click', () => {
+    document.querySelectorAll('.colorway-dot').forEach(x => x.classList.remove('active'));
+    d.classList.add('active');
+  });
+});
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}
+  });
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
