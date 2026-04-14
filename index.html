@@ -286,6 +286,8 @@ footer{
   .footer-links a{font-size:.8rem}
 }
 </style>
+<script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/Ratd3D/klaviyo.js?company_id=Ratd3D'></script>
+<script type="text/javascript">!function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();</script>
 </head>
 <body>
 
@@ -299,7 +301,7 @@ footer{
   <a href="#" class="nav-logo">GripFlow</a>
   <div class="nav-right">
     <a href="#">Studio Blog</a>
-    <a href="https://whop.com/checkout/plan_uDuvuLbss6htj?d=LAUNCH" class="nav-cta">Order Now</a>
+    <a href="#waitlist" class="nav-cta">Join Waitlist</a>
   </div>
 </nav>
 
@@ -476,40 +478,38 @@ footer{
   </div>
 </section>
 
-<!-- PRODUCT -->
-<section class="product-section reveal">
+<!-- WAITLIST -->
+<section class="product-section reveal" id="waitlist">
   <div class="product-grid">
     <div class="product-img">
-      <div class="product-img-text">Product photography coming soon</div>
+      <div class="product-img-text">First drop coming soon</div>
       <svg class="product-sock-bg" width="280" height="360" viewBox="0 0 220 300" fill="none">
         <path d="M50 30 Q48 12 72 8 Q108 2 136 14 Q158 24 154 48 L148 188 Q151 234 172 254 Q196 276 182 292 Q168 302 144 296 Q106 289 82 264 Q58 238 50 204 Z" fill="#E8907A"/>
       </svg>
     </div>
     <div>
+      <div class="section-eyebrow" style="margin-bottom:.75rem">First Drop</div>
       <h3 class="product-name">GripFlow Pilates Socks</h3>
-      <div class="product-price-row">
-        <span class="product-price-sale">$17.60</span>
-        <span class="product-price-orig">$22.00</span>
+      <p style="font-size:.88rem;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:1.75rem">Premium pilates grip socks engineered for the reformer. Targeted grip zones, flat toe seam, breathable slim fabric. Three colorways dropping soon — coral blush, cream, and charcoal.</p>
+      <div style="display:flex;gap:1.5rem;margin-bottom:1.75rem;flex-wrap:wrap">
+        <div>
+          <div class="sz-label">Price</div>
+          <div style="font-family:var(--serif);font-size:1.75rem;font-weight:300;color:var(--ink)">$22 <span style="font-family:var(--sans);font-size:.8rem;color:var(--ink-3)">/ pair</span></div>
+        </div>
+        <div>
+          <div class="sz-label">Launch offer</div>
+          <div style="font-size:.88rem;color:var(--coral);font-weight:500;margin-top:.3rem">20% off with code LAUNCH</div>
+        </div>
       </div>
-      <div class="stars">★★★★★</div>
-      <div class="rating-note">Launching now — be the first</div>
-      <div class="sz-label">Size</div>
-      <div class="sz-grid">
-        <button class="sz-btn">XS</button>
-        <button class="sz-btn">S</button>
-        <button class="sz-btn active">M</button>
-        <button class="sz-btn">L</button>
-        <button class="sz-btn">XL</button>
-      </div>
-      <div class="sz-label">Color — Coral Blush</div>
-      <div class="sw-row">
+      <div class="sz-label">Colorways</div>
+      <div class="sw-row" style="margin-bottom:1.75rem">
         <div class="swatch active" style="background:#E8907A"></div>
         <div class="swatch" style="background:#D4C4B8"></div>
         <div class="swatch" style="background:#2C2926"></div>
       </div>
-      <a href="https://whop.com/checkout/plan_uDuvuLbss6htj?d=LAUNCH" class="btn-full btn-dark">Order Now — $17.60</a>
-      <a href="https://whop.com/gripflow-31f8/" class="btn-full btn-outline">View on Whop</a>
-      <div class="promo-note">Code LAUNCH applied · 20% off for new customers</div>
+      <div class="sz-label" style="margin-bottom:.75rem">Join the waitlist — be first to know when we drop</div>
+      <div class="klaviyo-form-TmjCcK"></div>
+      <div style="font-size:.68rem;color:var(--ink-3);margin-top:.5rem">No spam. Just a single email when we launch. Use code LAUNCH for 20% off.</div>
     </div>
   </div>
 </section>
@@ -574,6 +574,20 @@ footer{
 </footer>
 
 <script>
+function submitWaitlist() {
+  const email = document.getElementById('waitlist-email').value;
+  if (!email || !email.includes('@')) {
+    document.getElementById('waitlist-email').style.borderColor = 'var(--coral)';
+    document.getElementById('waitlist-email').placeholder = 'Please enter a valid email';
+    return;
+  }
+  // Store email locally and show success
+  const emails = JSON.parse(localStorage.getItem('gripflow-waitlist') || '[]');
+  emails.push({email, date: new Date().toISOString()});
+  localStorage.setItem('gripflow-waitlist', JSON.stringify(emails));
+  document.getElementById('waitlist-form').style.display = 'none';
+  document.getElementById('waitlist-success').style.display = 'block';
+}
 document.querySelectorAll('.sz-btn').forEach(b => {
   b.addEventListener('click', () => {
     document.querySelectorAll('.sz-btn').forEach(x => x.classList.remove('active'));
