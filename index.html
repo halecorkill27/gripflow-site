@@ -111,6 +111,115 @@ nav a:hover{color:var(--coral)}
 .fs-label{font-weight:500;display:block;font-size:.74rem}
 .fs-sub{color:var(--ink-3);font-size:.66rem}
 @keyframes floatA{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes spin-slow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes spin-reverse{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
+@keyframes pulse-ring{0%,100%{transform:scale(1);opacity:.4}50%{transform:scale(1.06);opacity:.7}}
+@keyframes fade-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes draw-line{from{stroke-dashoffset:600}to{stroke-dashoffset:0}}
+@keyframes counter-spin{from{transform:rotate(360deg)}to{transform:rotate(0deg)}}
+
+/* SPINNING BADGE */
+.spin-badge{
+  position:absolute;width:100px;height:100px;
+  top:1.5rem;left:1.5rem;
+}
+.spin-badge-ring{
+  position:absolute;inset:0;border-radius:50%;
+  border:1px solid rgba(232,144,122,.35);
+  animation:spin-slow 12s linear infinite;
+}
+.spin-badge-text{
+  position:absolute;inset:0;
+  animation:spin-slow 12s linear infinite;
+}
+.spin-badge-center{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:.65rem;font-style:italic;color:var(--coral);
+  animation:counter-spin 12s linear infinite;
+}
+
+/* ROTATING RING AROUND SOCK */
+.sock-ring-wrap{position:relative;display:inline-block}
+.sock-outer-ring{
+  position:absolute;inset:-32px;border-radius:50%;
+  border:2px dashed rgba(232,144,122,.5);
+  pointer-events:none;
+  will-change:transform;
+}
+.sock-inner-ring{
+  position:absolute;inset:-14px;border-radius:50%;
+  border:1.5px solid rgba(232,144,122,.35);
+  pointer-events:none;
+  will-change:transform;
+}
+
+/* DIFF ITEMS HOVER ANIMATION */
+.diff-item{transition:background .2s,transform .2s}
+.diff-item:hover{background:var(--white);transform:translateY(-2px)}
+.diff-n{transition:color .2s}
+.diff-item:hover .diff-n{color:var(--coral)}
+
+/* COMMUNITY CARD HOVER */
+.community-card{transition:background .2s,transform .2s,box-shadow .2s}
+.community-card:hover{background:var(--white);transform:translateY(-3px);box-shadow:0 8px 32px rgba(26,23,20,.06)}
+
+/* STAGGERED HERO ANIMATION */
+.hero-headline{animation:fade-up .8s ease both}
+.hero-desc{animation:fade-up .8s .15s ease both}
+.btn-ink{animation:fade-up .8s .25s ease both}
+.promo{animation:fade-up .8s .35s ease both}
+
+/* FLOATING STATS ENHANCED */
+.floating-stat{
+  position:absolute;background:var(--white);
+  padding:.6rem .875rem;font-size:.7rem;color:var(--ink);
+  border:var(--rule);
+  transition:transform .2s,box-shadow .2s;
+}
+.floating-stat:hover{transform:translateY(-4px)!important;box-shadow:0 8px 24px rgba(26,23,20,.1)}
+
+/* TICKER PAUSE ON HOVER */
+.ticker:hover .ticker-inner{animation-play-state:paused}
+
+/* NAV LOGO SPIN DOT */
+.nav-logo-dot{
+  display:inline-block;width:5px;height:5px;border-radius:50%;
+  background:var(--coral);margin-left:3px;margin-bottom:2px;
+  animation:pulse-ring 2s ease-in-out infinite;
+  vertical-align:middle;
+}
+
+/* PRICE COUNTER ANIMATION */
+@keyframes count-up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.price-big{animation:count-up .6s .4s ease both}
+
+/* SCROLL PROGRESS BAR */
+.scroll-progress{
+  position:fixed;top:52px;left:0;height:2px;
+  background:var(--coral);width:0%;z-index:200;
+  transition:width .1s linear;
+}
+
+/* HERO KICKER ANIMATION */
+.hero-kicker{animation:fade-up .6s ease both}
+
+/* SECTION TITLE UNDERLINE ANIMATION */
+.section-title em{
+  position:relative;
+}
+.section-title em::after{
+  content:'';position:absolute;bottom:-2px;left:0;right:0;height:1px;
+  background:var(--coral);transform:scaleX(0);transform-origin:left;
+  transition:transform .6s ease;
+}
+.reveal.in .section-title em::after{transform:scaleX(1)}
+
+/* APP FEATURES STAGGER */
+.app-feat{opacity:0;transform:translateX(-12px);transition:opacity .4s ease,transform .4s ease}
+.app-section.in-view .app-feat:nth-child(1){opacity:1;transform:none;transition-delay:.1s}
+.app-section.in-view .app-feat:nth-child(2){opacity:1;transform:none;transition-delay:.2s}
+.app-section.in-view .app-feat:nth-child(3){opacity:1;transform:none;transition-delay:.3s}
+.app-section.in-view .app-feat:nth-child(4){opacity:1;transform:none;transition-delay:.4s}
 .hero-r-bottom{
   padding:.875rem 2rem;border-top:var(--rule);
   display:flex;justify-content:space-between;align-items:center;
@@ -290,6 +399,7 @@ footer{
 <script type="text/javascript">!function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();</script>
 </head>
 <body>
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <!-- NAV -->
 <nav>
@@ -298,10 +408,10 @@ footer{
     <a href="#app">App</a>
     <a href="#community">Community</a>
   </div>
-  <a href="#" class="nav-logo">GripFlow</a>
+  <a href="#" class="nav-logo">GripFlow<span class="nav-logo-dot"></span></a>
   <div class="nav-right">
     <a href="#">Studio Blog</a>
-    <a href="https://whop.com/gripflow-31f8/" class="nav-cta">Shop Now</a>
+    <a href="#waitlist" class="nav-cta">Join Waitlist</a>
   </div>
 </nav>
 
@@ -331,7 +441,22 @@ footer{
       <span>Coral Blush · Cream · Charcoal</span>
     </div>
     <div class="hero-visual-area">
-      <div style="position:relative">
+      <!-- Spinning circular badge -->
+      <div class="spin-badge">
+        <div class="spin-badge-ring"></div>
+        <svg class="spin-badge-text" viewBox="0 0 100 100">
+          <defs>
+            <path id="circle-text" d="M 50,50 m -35,0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"/>
+          </defs>
+          <text font-size="8.5" fill="#E8907A" font-family="DM Sans, sans-serif" letter-spacing="3.2" text-transform="uppercase">
+            <textPath href="#circle-text">ENGINEERED FOR PILATES · GRIP FLOW ·</textPath>
+          </text>
+        </svg>
+        <div class="spin-badge-center">GF</div>
+      </div>
+      <div class="sock-ring-wrap">
+        <div class="sock-outer-ring"></div>
+        <div class="sock-inner-ring"></div>
         <svg width="230" height="310" viewBox="0 0 220 300" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M50 30 Q48 12 72 8 Q108 2 136 14 Q158 24 154 48 L148 188 Q151 234 172 254 Q196 276 182 292 Q168 302 144 296 Q106 289 82 264 Q58 238 50 204 Z" fill="#E8907A"/>
           <path d="M50 30 Q48 12 72 8 Q108 2 136 14 Q158 24 154 48 L152 88 Q124 76 86 78 Q64 79 50 86 Z" fill="rgba(255,255,255,.22)"/>
@@ -402,8 +527,8 @@ footer{
           <span class="fs-label">Slim-fit fabric</span>
           <span class="fs-sub">Zero reformer bulk</span>
         </div>
-      </div>
-    </div>
+      </div><!-- end sock-ring-wrap -->
+    </div><!-- end hero-visual-area -->
     <div class="hero-r-bottom">
       <div class="colorway-dots">
         <div class="colorway-dot active" style="background:#E8907A"></div>
@@ -774,6 +899,76 @@ const obs = new IntersectionObserver(entries => {
   });
 },{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// App section feature stagger
+const appObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){e.target.classList.add('in-view')}
+  });
+},{threshold:0.2});
+const appSection = document.querySelector('.app-section');
+if(appSection) appObs.observe(appSection);
+
+// Scroll progress bar
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = (scrollTop / docHeight) * 100;
+  document.getElementById('scrollProgress').style.width = pct + '%';
+});
+
+// Mouse parallax on sock rings
+const outerRing = document.querySelector('.sock-outer-ring');
+const innerRing = document.querySelector('.sock-inner-ring');
+const spinBadge = document.querySelector('.spin-badge');
+const heroVisual = document.querySelector('.hero-visual-area');
+
+let mouseX = 0, mouseY = 0;
+let outerAngle = 0, innerAngle = 0;
+let targetX = 0, targetY = 0;
+let currentX = 0, currentY = 0;
+
+document.addEventListener('mousemove', (e) => {
+  if (!heroVisual) return;
+  const rect = heroVisual.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+  targetX = (e.clientX - centerX) / (rect.width / 2);
+  targetY = (e.clientY - centerY) / (rect.height / 2);
+  mouseX = e.clientX / window.innerWidth;
+  mouseY = e.clientY / window.innerHeight;
+});
+
+function animateRings() {
+  currentX += (targetX - currentX) * 0.08;
+  currentY += (targetY - currentY) * 0.08;
+
+  outerAngle += 0.5;
+  if (outerRing) {
+    const offsetX = currentX * 48;
+    const offsetY = currentY * 38;
+    outerRing.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${outerAngle}deg) scale(${1 + Math.abs(currentX) * 0.08})`;
+    outerRing.style.opacity = 0.5 + Math.abs(currentX + currentY) * 0.25;
+  }
+
+  innerAngle -= 0.8;
+  if (innerRing) {
+    const offsetX = currentX * -28;
+    const offsetY = currentY * -22;
+    innerRing.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${innerAngle}deg) scale(${1 + Math.abs(currentY) * 0.06})`;
+    innerRing.style.opacity = 0.4 + Math.abs(currentX + currentY) * 0.3;
+  }
+
+  if (spinBadge) {
+    const tiltX = currentY * 14;
+    const tiltY = currentX * -14;
+    spinBadge.style.transform = `rotate(${tiltY}deg) translateY(${tiltX}px) scale(${1 + Math.abs(currentX) * 0.05})`;
+    spinBadge.style.transition = 'transform 0.2s ease';
+  }
+
+  requestAnimationFrame(animateRings);
+}
+animateRings();
 </script>
 </body>
 </html>
