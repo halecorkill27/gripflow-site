@@ -536,23 +536,97 @@ footer{
     <div>
       <div class="section-eyebrow" style="margin-bottom:.75rem">First Drop</div>
       <h3 class="product-name">GripFlow Pilates Socks</h3>
-      <p style="font-size:.88rem;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:1.75rem">Premium pilates grip socks engineered for the reformer. Targeted grip zones, flat toe seam, breathable slim fabric. Three colorways dropping soon — coral blush, cream, and charcoal.</p>
-      <div style="display:flex;gap:1.5rem;margin-bottom:1.75rem;flex-wrap:wrap">
-        <div>
-          <div class="sz-label">Price</div>
-          <div style="font-family:var(--serif);font-size:1.75rem;font-weight:300;color:var(--ink)">$22 <span style="font-family:var(--sans);font-size:.8rem;color:var(--ink-3)">/ pair</span></div>
+      <p style="font-size:.88rem;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:1.5rem">Premium pilates grip socks engineered for the reformer. Targeted grip zones, flat toe seam, breathable slim fabric. Three colorways — coral blush, cream, and black.</p>
+
+      <!-- BUNDLE TOGGLE -->
+      <div style="display:flex;gap:.5rem;margin-bottom:1.5rem">
+        <button onclick="selectPlan('single')" id="btn-single" style="flex:1;padding:.65rem;border:1.5px solid var(--ink);background:var(--ink);color:var(--white);font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .15s">Single Pair — $22</button>
+        <button onclick="selectPlan('bundle')" id="btn-bundle" style="flex:1;padding:.65rem;border:1.5px solid rgba(26,23,20,0.2);background:none;color:var(--ink);font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .15s;position:relative">
+          Buy 2 Get 1 Free — $44
+          <span style="position:absolute;top:-10px;right:8px;background:var(--coral);color:var(--white);font-size:.58rem;padding:.15rem .4rem;letter-spacing:.04em">FREE PAIR</span>
+        </button>
+      </div>
+
+      <!-- SINGLE PLAN -->
+      <div id="plan-single">
+        <div style="display:flex;gap:1.5rem;margin-bottom:1.25rem;flex-wrap:wrap">
+          <div>
+            <div class="sz-label">Price</div>
+            <div style="font-family:var(--serif);font-size:1.75rem;font-weight:300;color:var(--ink)">$22 <span style="font-family:var(--sans);font-size:.8rem;color:var(--ink-3)">/ pair</span></div>
+          </div>
+          <div>
+            <div class="sz-label">Launch offer</div>
+            <div style="font-size:.88rem;color:var(--coral);font-weight:500;margin-top:.3rem">20% off with code LAUNCH → $17.60</div>
+          </div>
         </div>
-        <div>
-          <div class="sz-label">Launch offer</div>
-          <div style="font-size:.88rem;color:var(--coral);font-weight:500;margin-top:.3rem">20% off with code LAUNCH</div>
+        <div class="sz-label">Choose your colorway</div>
+        <div style="display:flex;gap:.625rem;margin:.5rem 0 1.25rem;flex-wrap:wrap">
+          <div onclick="selectColor(this,'Coral Blush')" class="color-pill active-pill" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .75rem;border:1.5px solid var(--ink);cursor:pointer;font-size:.72rem;font-weight:500">
+            <span style="width:14px;height:14px;border-radius:50%;background:#E8907A;display:inline-block"></span>Coral Blush
+          </div>
+          <div onclick="selectColor(this,'Cream')" class="color-pill" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .75rem;border:1.5px solid rgba(26,23,20,0.2);cursor:pointer;font-size:.72rem">
+            <span style="width:14px;height:14px;border-radius:50%;background:#FAF6F0;border:1px solid #ddd;display:inline-block"></span>Cream
+          </div>
+          <div onclick="selectColor(this,'Black')" class="color-pill" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .75rem;border:1.5px solid rgba(26,23,20,0.2);cursor:pointer;font-size:.72rem">
+            <span style="width:14px;height:14px;border-radius:50%;background:#1A1714;display:inline-block"></span>Black
+          </div>
+        </div>
+        <div class="sz-label" style="margin-bottom:.5rem">Size</div>
+        <div class="sz-grid" style="margin-bottom:1.25rem">
+          <button class="sz-btn">S</button>
+          <button class="sz-btn active">M</button>
+          <button class="sz-btn">L</button>
         </div>
       </div>
-      <div class="sz-label">Colorways</div>
-      <div class="sw-row" style="margin-bottom:1.75rem">
-        <div class="swatch active" style="background:#E8907A"></div>
-        <div class="swatch" style="background:#D4C4B8"></div>
-        <div class="swatch" style="background:#2C2926"></div>
+
+      <!-- BUNDLE PLAN -->
+      <div id="plan-bundle" style="display:none">
+        <div style="display:flex;gap:1.5rem;margin-bottom:1.25rem;flex-wrap:wrap">
+          <div>
+            <div class="sz-label">Bundle price</div>
+            <div style="font-family:var(--serif);font-size:1.75rem;font-weight:300;color:var(--ink)">$44 <span style="font-family:var(--sans);font-size:.8rem;color:var(--ink-3)">/ 3 pairs</span></div>
+          </div>
+          <div>
+            <div class="sz-label">You save</div>
+            <div style="font-size:.88rem;color:var(--coral);font-weight:500;margin-top:.3rem">One pair completely free 🤍</div>
+          </div>
+        </div>
+        <div class="sz-label" style="margin-bottom:.5rem">Choose your 3 colorways</div>
+        <p style="font-size:.75rem;color:var(--ink-3);margin-bottom:.75rem;font-weight:300">Mix and match — pick any combination</p>
+        <div style="display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.25rem">
+          <div style="display:flex;align-items:center;gap:.75rem">
+            <span style="font-size:.72rem;color:var(--ink-3);width:40px">Pair 1</span>
+            <div style="display:flex;gap:.4rem;flex-wrap:wrap">
+              <div onclick="selectBundle(this,0,'Coral Blush')" class="bundle-chip active-bundle" style="display:flex;align-items:center;gap:.35rem;padding:.35rem .625rem;border:1.5px solid var(--ink);cursor:pointer;font-size:.7rem;font-weight:500"><span style="width:10px;height:10px;border-radius:50%;background:#E8907A;display:inline-block"></span>Coral</div>
+              <div onclick="selectBundle(this,0,'Cream')" class="bundle-chip" style="display:flex;align-items:center;gap:.35rem;padding:.35rem .625rem;border:1.5px solid rgba(26,23,20,0.15);cursor:pointer;font-size:.7rem"><span style="width:10px;height:10px;border-radius:50%;background:#FAF6F0;border:1px solid #ddd;display:inline-block"></span>Cream</div>
+              <div onclick="selectBundle(this,0,'Black')" class="bundle-chip" style="display:flex;align-items:center;gap:.35rem;padding:.35rem .625rem;border:1.5px solid rgba(26,23,20,0.15);cursor:pointer;font-size:.7rem"><span style="width:10px;height:10px;border-radius:50%;background:#1A1714;display:inline-block"></span>Black</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem">
+            <span style="font-size:.72rem;color:var(--ink-3);width:40px">Pair 2</span>
+            <div style="display:flex;gap:.4rem;flex-wrap:wrap">
+              <div onclick="selectBundle(this,1,'Coral Blush')" class="bundle-chip" style="display:flex;align-items:center;gap:.35rem;padding:.35rem .625rem;border:1.5px solid rgba(26,23,20,0.15);cursor:pointer;font-size:.7rem"><span style="width:10px;height:10px;border-radius:50%;background:#E8907A;display:inline-block"></span>Coral</div>
+              <div onclick="selectBundle(this,1,'Cream')" class="bundle-chip active-bundle" style="display:flex;align-items:center;gap:.35rem;padding:.35rem .625rem;border:1.5px solid var(--ink);cursor:pointer;font-size:.7rem;font-weight:500"><span style="width:10px;height:10px;border-radius:50%;background:#FAF6F0;border:1px solid #ddd;display:inline-block"></span>Cream</div>
+              <div onclick="selectBundle(this,1,'Black')" class="bundle-chip" style="display:flex;align-items:center;gap:.35rem;padding:.35rem .625rem;border:1.5px solid rgba(26,23,20,0.15);cursor:pointer;font-size:.7rem"><span style="width:10px;height:10px;border-radius:50%;background:#1A1714;display:inline-block"></span>Black</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem">
+            <span style="font-size:.72rem;color:var(--ink-3);width:40px">Pair 3</span>
+            <div style="display:flex;gap:.4rem;flex-wrap:wrap">
+              <div onclick="selectBundle(this,2,'Coral Blush')" class="bundle-chip" style="display:flex;align-items:center;gap:.35rem;padding:.35rem .625rem;border:1.5px solid rgba(26,23,20,0.15);cursor:pointer;font-size:.7rem"><span style="width:10px;height:10px;border-radius:50%;background:#E8907A;display:inline-block"></span>Coral</div>
+              <div onclick="selectBundle(this,2,'Cream')" class="bundle-chip" style="display:flex;align-items:center;gap:.35rem;padding:.35rem .625rem;border:1.5px solid rgba(26,23,20,0.15);cursor:pointer;font-size:.7rem"><span style="width:10px;height:10px;border-radius:50%;background:#FAF6F0;border:1px solid #ddd;display:inline-block"></span>Cream</div>
+              <div onclick="selectBundle(this,2,'Black')" class="bundle-chip active-bundle" style="display:flex;align-items:center;gap:.35rem;padding:.35rem .625px;border:1.5px solid var(--ink);cursor:pointer;font-size:.7rem;font-weight:500"><span style="width:10px;height:10px;border-radius:50%;background:#1A1714;display:inline-block"></span>Black</div>
+            </div>
+          </div>
+        </div>
+        <div class="sz-label" style="margin-bottom:.5rem">Size — same size for all 3</div>
+        <div class="sz-grid" style="margin-bottom:1.25rem">
+          <button class="sz-btn">S</button>
+          <button class="sz-btn active">M</button>
+          <button class="sz-btn">L</button>
+        </div>
       </div>
+
       <div class="sz-label" style="margin-bottom:.75rem">Join the waitlist — be first to know when we drop</div>
       <div class="klaviyo-form-TmjCcK"></div>
       <div style="font-size:.68rem;color:var(--ink-3);margin-top:.5rem">No spam. Just a single email when we launch. Use code LAUNCH for 20% off.</div>
@@ -633,6 +707,48 @@ function submitWaitlist() {
   localStorage.setItem('gripflow-waitlist', JSON.stringify(emails));
   document.getElementById('waitlist-form').style.display = 'none';
   document.getElementById('waitlist-success').style.display = 'block';
+}
+function selectPlan(plan) {
+  const single = document.getElementById('plan-single');
+  const bundle = document.getElementById('plan-bundle');
+  const btnSingle = document.getElementById('btn-single');
+  const btnBundle = document.getElementById('btn-bundle');
+  if(plan === 'single') {
+    single.style.display = 'block';
+    bundle.style.display = 'none';
+    btnSingle.style.background = 'var(--ink)';
+    btnSingle.style.color = 'var(--white)';
+    btnSingle.style.borderColor = 'var(--ink)';
+    btnBundle.style.background = 'none';
+    btnBundle.style.color = 'var(--ink)';
+    btnBundle.style.borderColor = 'rgba(26,23,20,0.2)';
+  } else {
+    single.style.display = 'none';
+    bundle.style.display = 'block';
+    btnBundle.style.background = 'var(--ink)';
+    btnBundle.style.color = 'var(--white)';
+    btnBundle.style.borderColor = 'var(--ink)';
+    btnSingle.style.background = 'none';
+    btnSingle.style.color = 'var(--ink)';
+    btnSingle.style.borderColor = 'rgba(26,23,20,0.2)';
+  }
+}
+function selectColor(el, color) {
+  document.querySelectorAll('.color-pill').forEach(p => {
+    p.style.borderColor = 'rgba(26,23,20,0.2)';
+    p.style.fontWeight = '400';
+  });
+  el.style.borderColor = 'var(--ink)';
+  el.style.fontWeight = '500';
+}
+function selectBundle(el, row, color) {
+  const chips = el.parentElement.querySelectorAll('.bundle-chip');
+  chips.forEach(c => {
+    c.style.borderColor = 'rgba(26,23,20,0.15)';
+    c.style.fontWeight = '400';
+  });
+  el.style.borderColor = 'var(--ink)';
+  el.style.fontWeight = '500';
 }
 document.querySelectorAll('.sz-btn').forEach(b => {
   b.addEventListener('click', () => {
